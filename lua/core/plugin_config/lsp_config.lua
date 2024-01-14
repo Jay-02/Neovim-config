@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = {"lua_ls"}
+  ensure_installed = {"clangd","lua_ls"}
 })
 local on_attach = function(_, _)
   vim.keymap.set('n','<leader>rn', vim.lsp.buf.rename, {} )
@@ -12,5 +12,8 @@ local on_attach = function(_, _)
   vim.keymap.set('n', 'K', vim.lsp.hover, {})
 end
 require("lspconfig").lua_ls.setup {
+  on_attach = on_attach
+}
+require("lspconfig").clangd.setup {
   on_attach = on_attach
 }

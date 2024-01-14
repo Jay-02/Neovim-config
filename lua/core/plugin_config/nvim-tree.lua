@@ -1,6 +1,5 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+vim.keymap.set('n', '<leader>n', ':NERDTreeFocus<CR>')
+vim.keymap.set('n', '<C-n>', ':NERDTree<CR>')
+vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>')
+vim.keymap.set('n', '<C-f>', ':NERDTreeFind<CR>')
 
-require("nvim-tree").setup()
-
-vim.keymap.set('n','<C-n>',  ':NvimTreeFindFilesToggle<CR>:' )
